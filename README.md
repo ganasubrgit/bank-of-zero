@@ -93,7 +93,7 @@ WSGI
 
 ### Account Management API's
 
-```http
+```
   POST /api/auth/signup
 ```
 
@@ -109,7 +109,7 @@ WSGI
 
 
 ### Payment Transfer
-```http
+```
   POST /api/auth/signin
 ```
 
@@ -119,7 +119,7 @@ WSGI
 | `password` | `string` | **Required**.  Account Password|
 
 ### Deposit Service API'S
-```http
+```
   POST /account/deposit
 ```
 
@@ -128,11 +128,11 @@ WSGI
 | `name` | `string` | **Required**. Account Name/User Name |
 | `balance` | `string` | **Required**. Amount to be deposited |
 
-```http
+```
 http://<IP>:<PORT>/deposit?name=<Account Name>&balance=<Amount>
 ```
 ### Payment Transfer
-```http
+```
   POST /account/transfer
 ```
 
@@ -142,19 +142,19 @@ http://<IP>:<PORT>/deposit?name=<Account Name>&balance=<Amount>
 | `to` | `string` | **Required**. Reciever Account Name/User Name |
 | `balance` | `string` | **Required**. Amount to be transferred |
 
-```http
+```
 http://<IP>:<PORT>/account/transfer?from=<Sender Name>&to=<Recipient Name?&balance=<Amount>
 ```
 
-```http
+```
 GET /account/get-all
 ```
 
-```http
+```
 GET /account/get-transactions
 ```
 
-```http
+```
 GET /account/get-transactions-by-name?name=<User Name>
 ```
 
@@ -162,7 +162,7 @@ GET /account/get-transactions-by-name?name=<User Name>
 
 Install the project using skaffold into docker/kubernetes
 
-```bash
+```
   git clone <this repo>
   cd bank-of-zero
   skaffold dev
