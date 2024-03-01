@@ -1,7 +1,7 @@
 apiVersion: skaffold/v4beta9
 kind: Config
 metadata:
-  name: bank-of-alti
+  name: bank-of-zero
 build:
   artifacts:
     - image: account-management
