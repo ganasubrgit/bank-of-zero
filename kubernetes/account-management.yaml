@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-management
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account-management
+  template:
+    metadata:
+      labels:
+        app: account-management
+    spec:
+      containers:
+        - name: account-management
+          image: account-management:latest
+          ports:
+            - containerPort: 8180
+          env:
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://otel-collector:4317"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: account-management
+spec:
+  selector:
+    app: account-management
+  ports:
+    - name: account-management
+      port: 8180

@@ -1,0 +1,28 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: bank-of-alti
+build:
+  artifacts:
+    - image: account-management
+      context: account-management
+    - image: deposit-service
+      context: deposit-service
+    - image: frontend
+      context: frontend
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false 
+manifests:
+  rawYaml:
+    - kubernetes/account-management.yaml
+    - kubernetes/artemis.yaml
+    - kubernetes/deposit-service.yaml
+    - kubernetes/frontend.yaml
+    - kubernetes/grafana.yaml
+    - kubernetes/jaeger.yaml
+    - kubernetes/loki.yaml
+    - kubernetes/mimir.yaml
+    - kubernetes/mysql.yaml
+    - kubernetes/otel-collector.yaml

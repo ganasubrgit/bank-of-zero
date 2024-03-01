@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: artemis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: artemis
+  template:
+    metadata:
+      labels:
+        app: artemis
+    spec:
+      containers:
+        - name: artemis
+          image: quay.io/artemiscloud/activemq-artemis-broker
+          env:
+            - name: AMQ_USER
+              value: "artemis"
+            - name: AMQ_PASSWORD
+              value: "artemis"
+      volumes:
+        - name: launch-script
+          hostPath:
+            path: ./launch.sh
+        - name: broker-xml
+          hostPath:
+            path: ./broker.xml

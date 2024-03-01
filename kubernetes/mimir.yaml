@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mimir
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mimir
+  template:
+    metadata:
+      labels:
+        app: mimir
+    spec:
+      containers:
+        - name: mimir
+          image: grafana/mimir:latest
+  #         volumeMounts:
+  #           - name: mimir-config
+  #             mountPath: /etc/mimir-config
+  #           - name: mimir-tsdb-sync
+  #             mountPath: /tmp/mimir/tsdb-sync
+  #           - name: mimir-data-tsdb
+  #             mountPath: /tmp/mimir/data/tsdb
+  #           - name: mimir-tsdb
+  #             mountPath: /tmp/mimir/tsdb
+  #           - name: mimir-compactor
+  #             mountPath: /tmp/mimir/compactor
+  #           - name: mimir-rules
+  #             mountPath: /tmp/mimir/rules
+  #         command:
+  #           - /bin/mimir
+  #           - -config.file=/etc/mimir-config/mimir-local.yaml
+  #         ports:
+  #           - containerPort: 9009
+  # volumes:
+  #   - name: mimir-config
+  #     hostPath:
+  #       path: ./mimir/config
+  #   - name: mimir-tsdb-sync
+  #     hostPath:
+  #       path: ./mimir/tsdb-sync
+  #   - name: mimir-data-tsdb
+  #     hostPath:
+  #       path: ./mimir/data/tsdb
+  #   - name: mimir-tsdb
+  #     hostPath:
+  #       path: ./mimir/tsdb
+  #   - name: mimir-compactor
+  #     hostPath:
+  #       path: ./mimir/compactor
+  #   - name: mimir-rules
+  #     hostPath:
+  #       path: ./mimir/rules
