@@ -8,21 +8,20 @@ A demo bank application to demonstrate SRE and Observability on a hybrid N-Tier 
 
 ## Tech Stack
 
-**Frontend:** Python Flask Framework [Rest API]
+**Frontend:** 
+Python Flask Framework [Rest API]
 
-**Web Server:** WSGI
+**Web Server:** 
+WSGI
 
 **App Server:** 
-
 * Account Management Service - Java SpringBoot 3 [Rest API]
 * Deposit Service - Java SpringBoot 3 [Hybrid]
 
 **Messaging Middleware:** Apache Artemis MQ
 
 **Database:** 
-
 * User Account Data - Mongo DB Cloud
-
 * Transactional Data - MySql
 
 
@@ -30,34 +29,26 @@ A demo bank application to demonstrate SRE and Observability on a hybrid N-Tier 
 ## Observability Tools
 
 **Metrics:**
-
 * Open Telemetry [OTLP]
 * Spring Boot Actuators [Prometheus Exposition Format]
 * Prometheus Exporters [Prometheus Exposition Format]
 
 **Logs:**
-
 * Loki
 
 **Traces:**
-
 * Jaeger [OTLP]
 
 **Visualization:**
-
 * Grafana
 
 **Agents:**
-
 * Java Open Telemetry Agent
 * MySqld Prometheus Exporter
 * Mongo Prometheus Exporter
 
 **Observability Gateway:**
-
 * Open Telemetry Collector
-
-
 
 ## API Reference
 
@@ -74,7 +65,6 @@ A demo bank application to demonstrate SRE and Observability on a hybrid N-Tier 
 | `/payment` | POST  | 🔒    |  Submits a new internal payment transaction to `deposit-service`                             |
 | `/signup`  | GET   |       |  Renders signup page if not authenticated. Otherwise redirects to `/home`                 |
 | `/signup`  | POST  |       |  Submits new user signup request to `account-management` service                                         |
-
 
 #### Account Management Service
 
@@ -100,8 +90,6 @@ A demo bank application to demonstrate SRE and Observability on a hybrid N-Tier 
 | `/account/transfer`    | POST   |     |  Transfers amount to reciepient and updates MySQL Database                      |
 | `/account/deposit` | POST  |    |  Deposits amount to account and updates MySQL Database                            |
                      
-
-
 
 ### Account Management API's
 
@@ -129,9 +117,6 @@ A demo bank application to demonstrate SRE and Observability on a hybrid N-Tier 
 | :-------- | :------- | :------------------------- |
 | `username` | `string` | **Required**.  Account Name/User Name |
 | `password` | `string` | **Required**.  Account Password|
-|
-
-
 
 ### Deposit Service API'S
 ```http
@@ -161,7 +146,6 @@ http://<IP>:<PORT>/deposit?name=<Account Name>&balance=<Amount>
 http://<IP>:<PORT>/account/transfer?from=<Sender Name>&to=<Recipient Name?&balance=<Amount>
 ```
 
-
 ```http
 GET /account/get-all
 ```
@@ -173,9 +157,6 @@ GET /account/get-transactions
 ```http
 GET /account/get-transactions-by-name?name=<User Name>
 ```
-
-
-
 
 ## Installation
 
@@ -198,7 +179,6 @@ After above steps, open a browser and access all the links
 - Ashish Sharma
 - Ganapathi Santhanam
 - Sridhar Thota
-
 
 
 ## References
