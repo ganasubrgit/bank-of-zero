@@ -176,7 +176,7 @@ GET /account/get-transactions-by-name?name=<User Name>
 
 ## Installation
 
-Install the project using docker compose
+Install the project using skaffold into docker/kubernetes
 
 ```bash
   git clone <this repo>
@@ -186,8 +186,8 @@ Install the project using docker compose
 
 After above steps, open a browser and access all the links
 
+* BOZ UI - http://localhost:5500
 * Grafana - http://localhost:3000
-* UI - http://localhost:5500
 * Jaeger - http://localhost:16686
 ## Authors
 
