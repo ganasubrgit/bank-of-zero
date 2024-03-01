@@ -2,6 +2,9 @@
 
 A demo bank application to demonstrate SRE and Observability on a hybrid N-Tier architecture comprising of a Frontend/Web Server, App Server [Backend], Database and Messaging Middleware. 
 
+## Architecture
+
+![](/image/image.jpeg)
 
 ## Tech Stack
 
