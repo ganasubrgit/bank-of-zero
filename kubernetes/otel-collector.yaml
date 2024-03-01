@@ -74,7 +74,7 @@ data:
       otlp:
         tls:
           insecure: true
-        endpoint: jaeger:4317
+        endpoint: http://jaeger:4317
       loki:
         endpoint: http://loki:3100/loki/api/v1/push
     
