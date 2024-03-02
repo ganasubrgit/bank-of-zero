@@ -21,7 +21,7 @@ WSGI
 **Messaging Middleware:** Apache Artemis MQ
 
 **Database:** 
-* User Account Data - Mongo DB Cloud
+* User Account Data - MongoDB 
 * Transactional Data - MySql
 
 
@@ -173,11 +173,11 @@ After above steps, open a browser and access all the links
 * BOZ UI - http://localhost:5500
 * Grafana - http://localhost:3000
 * Jaeger - http://localhost:16686
-## Authors
 
+## Authors
 - Navaneeth Ananthakrishnan
 - Ashish Sharma
-- Ganapathi Santhanam
+- Ganapathy Santhanam
 - Sridhar Thota
 
 
