@@ -37,4 +37,4 @@ spec:
     app: artemis
   ports:
     - name: artemis
-      port: 8180
+      port: 61616
