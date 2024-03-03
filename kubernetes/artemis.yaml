@@ -27,3 +27,14 @@ spec:
         - name: broker-xml
           hostPath:
             path: ./broker.xml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artemis
+spec:
+  selector:
+    app: artemis
+  ports:
+    - name: artemis
+      port: 8180

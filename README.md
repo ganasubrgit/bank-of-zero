@@ -24,8 +24,6 @@ WSGI
 * User Account Data - MongoDB 
 * Transactional Data - MySql
 
-
-
 ## Observability Tools
 
 **Metrics:**

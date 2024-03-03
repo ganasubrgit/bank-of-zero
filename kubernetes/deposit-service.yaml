@@ -31,4 +31,4 @@ spec:
     app: deposit-service
   ports:
     - name: deposit-servicet
-      port: 8180
+      port: 1980

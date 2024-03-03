@@ -352,7 +352,7 @@ def create_app():
 
         return render_template('login.html',
                                app_name=app_name,
-                               bank_name=os.getenv('BANK_NAME', 'Bank of Altimetrik'),
+                               bank_name=os.getenv('BANK_NAME', 'Bank of Zero'),
                                cluster_name='localhost',
                                cymbal_logo=os.getenv('CYMBAL_LOGO', 'false'),
                                default_password=os.getenv('DEFAULT_PASSWORD', ''),
@@ -437,7 +437,7 @@ def create_app():
 
             return render_template('consent.html',
                                    app_name=app_name,
-                                   bank_name=os.getenv('BANK_NAME', 'Bank of Altimetrik'),
+                                   bank_name=os.getenv('BANK_NAME', 'Bank of Zero'),
                                    cluster_name='localhost',
                                    cymbal_logo=os.getenv('CYMBAL_LOGO', 'false'),
                                    platform=platform,
@@ -507,7 +507,7 @@ def create_app():
                                     _external=True,
                                     _scheme=app.config['SCHEME']))
         return render_template('signup.html',
-                               bank_name=os.getenv('BANK_NAME', 'Bank of Altimetrik'),
+                               bank_name=os.getenv('BANK_NAME', 'Bank of Zero'),
                                cluster_name='localhost',
                                cymbal_logo=os.getenv('CYMBAL_LOGO', 'false'),
                                platform=platform,
@@ -583,10 +583,7 @@ def create_app():
             logger.error('Error validating token: %s', str(err))
             return False
 
-
-
     # set up global variables
-    
     
     # timeout in seconds for calls to the backend
     app.config['BACKEND_TIMEOUT'] = int(os.getenv('BACKEND_TIMEOUT', '4'))
@@ -594,9 +591,6 @@ def create_app():
     app.config['CONSENT_COOKIE'] = 'consented'
     app.config['TIMESTAMP_FORMAT'] = '%Y-%m-%dT%H:%M:%S.%f%z'
     app.config['SCHEME'] = os.environ.get('SCHEME', 'http')
-
-   
-
 
 
     platform = os.getenv('ENV_PLATFORM', None)
